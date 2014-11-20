@@ -1,0 +1,561 @@
+2014-11-14 04:18:40,065 3306 INFO ? openerp: OpenERP version 8.0
+2014-11-14 04:18:40,065 3306 INFO ? openerp: addons paths: ['/opt/odoo/.local/share/Odoo/addons/8.0', u'/opt/odoo/openerp/addons', u'/opt/odoo/addons']
+2014-11-14 04:18:40,065 3306 INFO ? openerp: database hostname: localhost
+2014-11-14 04:18:40,065 3306 INFO ? openerp: database port: 5432
+2014-11-14 04:18:40,065 3306 INFO ? openerp: database user: odoo
+2014-11-14 04:18:40,187 3306 INFO ? openerp.service.server: HTTP service (werkzeug) running on 0.0.0.0:8069
+2014-11-14 04:19:56,305 3306 INFO ? openerp.addons.bus.bus: Bus.loop listen imbus on db postgres
+2014-11-14 04:19:56,306 3306 ERROR ? openerp.sql_db: Connection to the database failed
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:19:56,323 3306 ERROR ? openerp.addons.bus.bus: Bus.loop error, sleep and retry
+Traceback (most recent call last):
+  File "/opt/odoo/addons/bus/bus.py", line 136, in run
+    self.loop()
+  File "/opt/odoo/addons/bus/bus.py", line 114, in loop
+    with openerp.sql_db.db_connect('postgres').cursor() as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:19:56,801 3306 INFO ? openerp.addons.report.models.report: Will use the Wkhtmltopdf binary at /usr/bin/wkhtmltopdf
+2014-11-14 04:19:56,878 3306 INFO ? openerp.addons.report.models.report: Upgrade Wkhtmltopdf to (at least) 0.12.0
+2014-11-14 04:19:57,060 3306 INFO ? openerp.http: HTTP Configuring static files
+2014-11-14 04:19:57,064 3306 INFO mindnervestech openerp.http: Generating nondb routing
+2014-11-14 04:19:57,081 3306 INFO mindnervestech werkzeug: 49.248.194.159 - - [14/Nov/2014 04:19:57] "GET / HTTP/1.1" 200 -
+2014-11-14 04:19:58,392 3306 ERROR None openerp.sql_db: Connection to the database failed
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:19:58,392 3306 ERROR None openerp.http: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/http.py", line 100, in dispatch_rpc
+    result = dispatch(method, params)
+  File "/opt/odoo/openerp/service/db.py", line 70, in dispatch
+    return fn(*params)
+  File "/opt/odoo/openerp/service/db.py", line 313, in exp_list
+    with closing(db.cursor()) as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:19:58,403 3306 INFO None werkzeug: 49.248.194.159 - - [14/Nov/2014 04:19:58] "GET /web HTTP/1.1" 500 -
+2014-11-14 04:19:58,422 3306 ERROR None openerp.sql_db: Connection to the database failed
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:19:58,422 3306 ERROR None werkzeug: Error on request:
+Traceback (most recent call last):
+  File "/usr/share/pyshared/werkzeug/serving.py", line 177, in run_wsgi
+    execute(self.server.app)
+  File "/usr/share/pyshared/werkzeug/serving.py", line 165, in execute
+    application_iter = app(environ, start_response)
+  File "/opt/odoo/openerp/service/server.py", line 280, in app
+    return self.app(e, s)
+  File "/opt/odoo/openerp/service/wsgi_server.py", line 216, in application
+    return application_unproxied(environ, start_response)
+  File "/opt/odoo/openerp/service/wsgi_server.py", line 202, in application_unproxied
+    result = handler(environ, start_response)
+  File "/opt/odoo/openerp/http.py", line 1215, in __call__
+    return self.dispatch(environ, start_response)
+  File "/opt/odoo/openerp/http.py", line 1189, in __call__
+    return self.app(environ, start_wrapped)
+  File "/usr/share/pyshared/werkzeug/wsgi.py", line 579, in __call__
+    return self.app(environ, start_response)
+  File "/opt/odoo/openerp/http.py", line 1327, in dispatch
+    self.setup_db(httprequest)
+  File "/opt/odoo/openerp/http.py", line 1273, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "/opt/odoo/openerp/http.py", line 1399, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "/opt/odoo/openerp/http.py", line 1373, in db_list
+    dbs = dispatch_rpc("db", "list", [force])
+  File "/opt/odoo/openerp/http.py", line 100, in dispatch_rpc
+    result = dispatch(method, params)
+  File "/opt/odoo/openerp/service/db.py", line 70, in dispatch
+    return fn(*params)
+  File "/opt/odoo/openerp/service/db.py", line 313, in exp_list
+    with closing(db.cursor()) as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/share/pyshared/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+2014-11-14 04:19:58,423 3306 ERROR None openerp.http: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/http.py", line 100, in dispatch_rpc
+    result = dispatch(method, params)
+  File "/opt/odoo/openerp/service/db.py", line 70, in dispatch
+    return fn(*params)
+  File "/opt/odoo/openerp/service/db.py", line 313, in exp_list
+    with closing(db.cursor()) as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:19:58,427 3306 INFO None werkzeug: 49.248.194.159 - - [14/Nov/2014 04:19:58] "GET /favicon.ico HTTP/1.1" 500 -
+2014-11-14 04:19:58,435 3306 ERROR None werkzeug: Error on request:
+Traceback (most recent call last):
+  File "/usr/share/pyshared/werkzeug/serving.py", line 177, in run_wsgi
+    execute(self.server.app)
+  File "/usr/share/pyshared/werkzeug/serving.py", line 165, in execute
+    application_iter = app(environ, start_response)
+  File "/opt/odoo/openerp/service/server.py", line 280, in app
+    return self.app(e, s)
+  File "/opt/odoo/openerp/service/wsgi_server.py", line 216, in application
+    return application_unproxied(environ, start_response)
+  File "/opt/odoo/openerp/service/wsgi_server.py", line 202, in application_unproxied
+    result = handler(environ, start_response)
+  File "/opt/odoo/openerp/http.py", line 1215, in __call__
+    return self.dispatch(environ, start_response)
+  File "/opt/odoo/openerp/http.py", line 1189, in __call__
+    return self.app(environ, start_wrapped)
+  File "/usr/share/pyshared/werkzeug/wsgi.py", line 579, in __call__
+    return self.app(environ, start_response)
+  File "/opt/odoo/openerp/http.py", line 1327, in dispatch
+    self.setup_db(httprequest)
+  File "/opt/odoo/openerp/http.py", line 1273, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "/opt/odoo/openerp/http.py", line 1399, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "/opt/odoo/openerp/http.py", line 1373, in db_list
+    dbs = dispatch_rpc("db", "list", [force])
+  File "/opt/odoo/openerp/http.py", line 100, in dispatch_rpc
+    result = dispatch(method, params)
+  File "/opt/odoo/openerp/service/db.py", line 70, in dispatch
+    return fn(*params)
+  File "/opt/odoo/openerp/service/db.py", line 313, in exp_list
+    with closing(db.cursor()) as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/share/pyshared/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+2014-11-14 04:20:00,843 3306 ERROR None openerp.sql_db: Connection to the database failed
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:20:00,843 3306 ERROR None openerp.http: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/http.py", line 100, in dispatch_rpc
+    result = dispatch(method, params)
+  File "/opt/odoo/openerp/service/db.py", line 70, in dispatch
+    return fn(*params)
+  File "/opt/odoo/openerp/service/db.py", line 313, in exp_list
+    with closing(db.cursor()) as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:20:00,846 3306 INFO None werkzeug: 49.248.194.159 - - [14/Nov/2014 04:20:00] "GET /favicon.ico HTTP/1.1" 500 -
+2014-11-14 04:20:00,855 3306 ERROR None werkzeug: Error on request:
+Traceback (most recent call last):
+  File "/usr/share/pyshared/werkzeug/serving.py", line 177, in run_wsgi
+    execute(self.server.app)
+  File "/usr/share/pyshared/werkzeug/serving.py", line 165, in execute
+    application_iter = app(environ, start_response)
+  File "/opt/odoo/openerp/service/server.py", line 280, in app
+    return self.app(e, s)
+  File "/opt/odoo/openerp/service/wsgi_server.py", line 216, in application
+    return application_unproxied(environ, start_response)
+  File "/opt/odoo/openerp/service/wsgi_server.py", line 202, in application_unproxied
+    result = handler(environ, start_response)
+  File "/opt/odoo/openerp/http.py", line 1215, in __call__
+    return self.dispatch(environ, start_response)
+  File "/opt/odoo/openerp/http.py", line 1189, in __call__
+    return self.app(environ, start_wrapped)
+  File "/usr/share/pyshared/werkzeug/wsgi.py", line 579, in __call__
+    return self.app(environ, start_response)
+  File "/opt/odoo/openerp/http.py", line 1327, in dispatch
+    self.setup_db(httprequest)
+  File "/opt/odoo/openerp/http.py", line 1273, in setup_db
+    httprequest.session.db = db_monodb(httprequest)
+  File "/opt/odoo/openerp/http.py", line 1399, in db_monodb
+    dbs = db_list(True, httprequest)
+  File "/opt/odoo/openerp/http.py", line 1373, in db_list
+    dbs = dispatch_rpc("db", "list", [force])
+  File "/opt/odoo/openerp/http.py", line 100, in dispatch_rpc
+    result = dispatch(method, params)
+  File "/opt/odoo/openerp/service/db.py", line 70, in dispatch
+    return fn(*params)
+  File "/opt/odoo/openerp/service/db.py", line 313, in exp_list
+    with closing(db.cursor()) as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/share/pyshared/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+2014-11-14 04:20:46,384 3306 INFO ? openerp.addons.bus.bus: Bus.loop listen imbus on db postgres
+2014-11-14 04:20:46,385 3306 ERROR ? openerp.sql_db: Connection to the database failed
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:20:46,385 3306 ERROR ? openerp.addons.bus.bus: Bus.loop error, sleep and retry
+Traceback (most recent call last):
+  File "/opt/odoo/addons/bus/bus.py", line 136, in run
+    self.loop()
+  File "/opt/odoo/addons/bus/bus.py", line 114, in loop
+    with openerp.sql_db.db_connect('postgres').cursor() as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:21:36,429 3306 INFO ? openerp.addons.bus.bus: Bus.loop listen imbus on db postgres
+2014-11-14 04:21:36,430 3306 ERROR ? openerp.sql_db: Connection to the database failed
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:21:36,430 3306 ERROR ? openerp.addons.bus.bus: Bus.loop error, sleep and retry
+Traceback (most recent call last):
+  File "/opt/odoo/addons/bus/bus.py", line 136, in run
+    self.loop()
+  File "/opt/odoo/addons/bus/bus.py", line 114, in loop
+    with openerp.sql_db.db_connect('postgres').cursor() as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:22:26,475 3306 INFO ? openerp.addons.bus.bus: Bus.loop listen imbus on db postgres
+2014-11-14 04:22:26,475 3306 ERROR ? openerp.sql_db: Connection to the database failed
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:22:26,476 3306 ERROR ? openerp.addons.bus.bus: Bus.loop error, sleep and retry
+Traceback (most recent call last):
+  File "/opt/odoo/addons/bus/bus.py", line 136, in run
+    self.loop()
+  File "/opt/odoo/addons/bus/bus.py", line 114, in loop
+    with openerp.sql_db.db_connect('postgres').cursor() as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:23:16,521 3306 INFO ? openerp.addons.bus.bus: Bus.loop listen imbus on db postgres
+2014-11-14 04:23:16,521 3306 ERROR ? openerp.sql_db: Connection to the database failed
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:23:16,522 3306 ERROR ? openerp.addons.bus.bus: Bus.loop error, sleep and retry
+Traceback (most recent call last):
+  File "/opt/odoo/addons/bus/bus.py", line 136, in run
+    self.loop()
+  File "/opt/odoo/addons/bus/bus.py", line 114, in loop
+    with openerp.sql_db.db_connect('postgres').cursor() as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:24:06,568 3306 INFO ? openerp.addons.bus.bus: Bus.loop listen imbus on db postgres
+2014-11-14 04:24:06,568 3306 ERROR ? openerp.sql_db: Connection to the database failed
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:24:06,569 3306 ERROR ? openerp.addons.bus.bus: Bus.loop error, sleep and retry
+Traceback (most recent call last):
+  File "/opt/odoo/addons/bus/bus.py", line 136, in run
+    self.loop()
+  File "/opt/odoo/addons/bus/bus.py", line 114, in loop
+    with openerp.sql_db.db_connect('postgres').cursor() as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:24:56,573 3306 INFO ? openerp.addons.bus.bus: Bus.loop listen imbus on db postgres
+2014-11-14 04:24:56,574 3306 ERROR ? openerp.sql_db: Connection to the database failed
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:24:56,574 3306 ERROR ? openerp.addons.bus.bus: Bus.loop error, sleep and retry
+Traceback (most recent call last):
+  File "/opt/odoo/addons/bus/bus.py", line 136, in run
+    self.loop()
+  File "/opt/odoo/addons/bus/bus.py", line 114, in loop
+    with openerp.sql_db.db_connect('postgres').cursor() as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:25:46,622 3306 INFO ? openerp.addons.bus.bus: Bus.loop listen imbus on db postgres
+2014-11-14 04:25:46,623 3306 ERROR ? openerp.sql_db: Connection to the database failed
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:25:46,623 3306 ERROR ? openerp.addons.bus.bus: Bus.loop error, sleep and retry
+Traceback (most recent call last):
+  File "/opt/odoo/addons/bus/bus.py", line 136, in run
+    self.loop()
+  File "/opt/odoo/addons/bus/bus.py", line 114, in loop
+    with openerp.sql_db.db_connect('postgres').cursor() as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:26:36,653 3306 INFO ? openerp.addons.bus.bus: Bus.loop listen imbus on db postgres
+2014-11-14 04:26:36,653 3306 ERROR ? openerp.sql_db: Connection to the database failed
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:26:36,653 3306 ERROR ? openerp.addons.bus.bus: Bus.loop error, sleep and retry
+Traceback (most recent call last):
+  File "/opt/odoo/addons/bus/bus.py", line 136, in run
+    self.loop()
+  File "/opt/odoo/addons/bus/bus.py", line 114, in loop
+    with openerp.sql_db.db_connect('postgres').cursor() as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:27:26,698 3306 INFO ? openerp.addons.bus.bus: Bus.loop listen imbus on db postgres
+2014-11-14 04:27:26,698 3306 ERROR ? openerp.sql_db: Connection to the database failed
+Traceback (most recent call last):
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+
+2014-11-14 04:27:26,699 3306 ERROR ? openerp.addons.bus.bus: Bus.loop error, sleep and retry
+Traceback (most recent call last):
+  File "/opt/odoo/addons/bus/bus.py", line 136, in run
+    self.loop()
+  File "/opt/odoo/addons/bus/bus.py", line 114, in loop
+    with openerp.sql_db.db_connect('postgres').cursor() as cr:
+  File "/opt/odoo/openerp/sql_db.py", line 569, in cursor
+    return Cursor(self.__pool, self.dbname, self.dsn, serialized=serialized)
+  File "/opt/odoo/openerp/sql_db.py", line 181, in __init__
+    self._cnx = pool.borrow(dsn)
+  File "/opt/odoo/openerp/sql_db.py", line 460, in _locked
+    return fun(self, *args, **kwargs)
+  File "/opt/odoo/openerp/sql_db.py", line 520, in borrow
+    result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
+  File "/usr/lib/python2.7/dist-packages/psycopg2/__init__.py", line 179, in connect
+    connection_factory=connection_factory, async=async)
+OperationalError: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+

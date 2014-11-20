@@ -1,0 +1,28 @@
+
+
+localhost : Nov 11 06:22:25 : odoo : user NOT in sudoers ; TTY=pts/0 ; PWD=/opt/odoo ; USER=root ; COMMAND=/bin/su - odoo -s /bin/bash
+
+
+
+localhost : Nov 11 06:22:47 : odoo : user NOT in sudoers ; TTY=pts/0 ; PWD=/opt/odoo ; USER=root ; COMMAND=/bin/su - odoo -s /bin/bash /opt/odoo/openerp-server
+
+
+
+localhost : Nov 11 06:24:29 : odoo : user NOT in sudoers ; TTY=pts/0 ; PWD=/opt/odoo ; USER=root ; COMMAND=/bin/su - odoo -s /bin/bash
+
+
+
+localhost : Nov 14 04:22:22 : odoo : user NOT in sudoers ; TTY=pts/0 ; PWD=/opt/odoo ; USER=postgres ; COMMAND=/usr/bin/createuser oddo
+
+
+
+localhost : Nov 14 04:24:44 : odoo : user NOT in sudoers ; TTY=pts/0 ; PWD=/opt/odoo ; USER=postgres ; COMMAND=/usr/bin/createuser -s odoo
+
+
+
+localhost : Nov 19 19:18:52 : odoo : user NOT in sudoers ; TTY=pts/0 ; PWD=/opt/odoo ; USER=root ; COMMAND=/bin/netstat -ntlp
+
+
+
+localhost : Nov 19 20:09:42 : odoo : user NOT in sudoers ; TTY=pts/1 ; PWD=/opt/odoo ; USER=root ; COMMAND=/bin/netstat -ntlp
+
